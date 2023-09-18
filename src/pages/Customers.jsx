@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import Popup from "../compnents/Popup";
 
 const Customers = () => {
+  const [customerId, setCustomerid] = useState("");
+
   const store = useSelector((store) => store.dumyData);
+  const removeCard = () => {
+    setCustomerid("");
+  };
+
   return (
     <div className="section">
+      {store?.clint?.map((item) => {
+        if (item.id === customerId) {
+          return <Popup key={item.id} removeCard={removeCard} item={item} />;
+        } else {
+          return null;
+        }
+      })}
+
       <div className="heading">
         <h1>Our Customer</h1>
       </div>
@@ -23,7 +38,12 @@ const Customers = () => {
           <tbody>
             {store?.clint?.map((elem, index) => {
               return (
-                <tr key={elem.id}>
+                <tr
+                  key={elem.id}
+                  onClick={() => {
+                    setCustomerid(elem.id);
+                  }}
+                >
                   <td>{index + 1}</td>
                   <td>{elem.name}</td>
                   <td>{elem.email}</td>

@@ -24,9 +24,11 @@ const Header = () => {
   return (
     <div className="menu">
       <NavLink to="/">
-        <img src={logo} className="logo" alt="logo" />
+        <div className="logo">
+          <img src={logo} className="logo-img" alt="logo" />
+          <p className="bank-name">Spark Bank</p>
+        </div>
       </NavLink>
-      <p className="bank-name">Spark Bank</p>
       <div className="menu-bar" ref={menuBarRef}>
         <button
           className="menu-btn"

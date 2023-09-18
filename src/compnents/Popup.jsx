@@ -11,13 +11,16 @@ const Popup = (props) => {
             onClick={() => {
               props.removeCard();
             }}
+            className="close-popup"
           >
-            <AiOutlineClose className="close-popup" />
+            <AiOutlineClose />
           </button>
+
           <div className="pera">
             <label>Name:-</label>
             {name}
           </div>
+
           <div className="pera">
             <label>Email:-</label>
             {email}

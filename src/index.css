@@ -190,6 +190,8 @@ html {
 }
 .close-popup {
   position: absolute;
+  display: grid;
+  align-items: center;
   top: 1.5rem;
   right: 2rem;
   border: none;

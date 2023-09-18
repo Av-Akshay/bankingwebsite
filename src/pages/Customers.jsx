@@ -19,7 +19,6 @@ const Customers = () => {
           return null;
         }
       })}
-
       <div className="heading">
         <h1>Our Customer</h1>
       </div>

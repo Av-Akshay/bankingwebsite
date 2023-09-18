@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assests/logo.jpg";
 import { HiMenu } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-import { useEffect, useRef } from "react";
+
+import logo from "../assests/logo.jpg";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -49,46 +49,22 @@ const Header = () => {
 
         <ul>
           <li>
-            <NavLink
-              className="menu-link"
-              to="/"
-              onClick={() => {
-                setToggle(false);
-              }}
-            >
+            <NavLink className="menu-link" to="/">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className="menu-link"
-              to="customer"
-              onClick={() => {
-                setToggle(false);
-              }}
-            >
+            <NavLink className="menu-link" to="customer">
               Our Cistomers List
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className="menu-link"
-              to="/transection"
-              onClick={() => {
-                setToggle(false);
-              }}
-            >
+            <NavLink className="menu-link" to="/transection">
               Transection History
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className="menu-link"
-              to="/transfer"
-              onClick={() => {
-                setToggle(false);
-              }}
-            >
+            <NavLink className="menu-link" to="/transfer">
               Transfer Money
             </NavLink>
           </li>

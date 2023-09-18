@@ -58,7 +58,6 @@ html {
   right: -22rem;
   transition: all 0.2s linear;
   background-color: rgb(144, 218, 228);
-  animation: display 0.8s linear;
   z-index: 99;
 }
 .menu-list ul {
@@ -171,6 +170,15 @@ html {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.4);
+  animation: display 0.5s linear;
+}
+@keyframes display {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .card {
   border-radius: 2rem;

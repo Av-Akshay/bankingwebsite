@@ -20,7 +20,7 @@ const Popup = (props) => {
           </div>
           <div className="pera">
             <label>Email:-</label>
-            {email}{" "}
+            {email}
           </div>
           <div className="pera">
             <label>Id:-</label> {id}

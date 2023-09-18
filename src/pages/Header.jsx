@@ -29,46 +29,76 @@ const Header = () => {
           <p className="bank-name">Spark Bank</p>
         </div>
       </NavLink>
-      <div className="menu-bar" ref={menuBarRef}>
-        <button
-          className="menu-btn"
-          onClick={() => {
-            setToggle(!toggle);
-            console.log("clicked");
-          }}
-        >
-          <HiMenu />
-        </button>
-      </div>
-      <div className={toggle ? "menu-list active" : "menu-list"}>
-        <div className="close-btn-div">
-          <button className="close-btn">
-            <AiOutlineClose />
+      <div ref={menuBarRef}>
+        <div className="menu-bar">
+          <button
+            className="menu-btn"
+            onClick={() => {
+              setToggle(!toggle);
+              console.log("clicked");
+            }}
+          >
+            <HiMenu />
           </button>
         </div>
-
-        <ul>
-          <li>
-            <NavLink className="menu-link" to="/">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="menu-link" to="customer">
-              Our Cistomers List
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="menu-link" to="/transection">
-              Transection History
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="menu-link" to="/transfer">
-              Transfer Money
-            </NavLink>
-          </li>
-        </ul>
+        <div>
+          <ul className={toggle ? "menu-list active" : "menu-list"}>
+            <li>
+              <button
+                className="close-btn"
+                onClick={() => {
+                  setToggle(false);
+                }}
+              >
+                <AiOutlineClose />
+              </button>
+            </li>
+            <li>
+              <NavLink
+                className="menu-link"
+                to="/"
+                onClick={() => {
+                  setToggle(false);
+                }}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="menu-link"
+                to="customer"
+                onClick={() => {
+                  setToggle(false);
+                }}
+              >
+                Our Cistomers List
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="menu-link"
+                to="/transection"
+                onClick={() => {
+                  setToggle(false);
+                }}
+              >
+                Transection History
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="menu-link"
+                to="/transfer"
+                onClick={() => {
+                  setToggle(false);
+                }}
+              >
+                Transfer Money
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

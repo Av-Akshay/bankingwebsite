@@ -2,11 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 html {
   font-size: 62.5%;
 }
+#root {
+  overflow: hidden;
+}
+
 /*============================== header css==================== */
 .menu {
   width: 100%;
@@ -14,7 +17,6 @@ html {
   display: flex;
   align-items: center;
   background-color: rgb(144, 218, 228);
-  overflow-y: hidden;
 }
 .logo {
   display: flex;
@@ -36,9 +38,10 @@ html {
 }
 .menu-bar {
   position: absolute;
-  top: 2rem;
+  top: 3.4vh;
   right: 5rem;
   overflow: hidden;
+  z-index: 9;
 }
 .menu-btn {
   font-size: 2.5rem;
@@ -55,27 +58,22 @@ html {
   font-size: 2rem;
   position: absolute;
   top: 0;
-  right: -22rem;
-  transition: all 0.2s linear;
+  right: 0;
   background-color: rgb(144, 218, 228);
-  z-index: 99;
+  transition: all 0.5s linear;
+  opacity: 0;
 }
 .menu-list ul {
   list-style: none;
 }
 
 .active {
-  right: 0;
+  transition: all 0.5s linear;
+  opacity: 1;
+  z-index: 99;
 }
 
-@keyframes display {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+.menu-list li,
 .active li {
   margin: 2rem 0 0 2rem;
 }
@@ -85,14 +83,11 @@ html {
   margin: 5rem 0 0 2rem;
   text-decoration: none;
 }
-.close-btn-div {
-  margin: 2rem 0;
-}
+
 .close-btn {
   font-size: 2rem;
   border: none;
-  left: 3.2rem;
-  position: absolute;
+  margin-left: 1rem;
   background-color: rgb(144, 218, 228);
 }
 
@@ -167,6 +162,7 @@ html {
   width: 100%;
   height: 100vh;
   display: flex;
+  top: 0;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.4);
@@ -220,4 +216,33 @@ form {
 }
 .forms-input {
   padding: 0.5rem 1rem;
+}
+
+@media screen and (max-width: 760px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media screen and (max-width: 650px) {
+  html {
+    font-size: 50%;
+  }
+  .center-div {
+    flex-wrap: wrap-reverse;
+  }
+}
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 43.75%;
+  }
+  .table-div table {
+    font-size: 1.4rem;
+  }
+  .table-div {
+    width: 95%;
+    margin: auto;
+  }
+  .customer {
+    max-width: 45rem;
+  }
 }

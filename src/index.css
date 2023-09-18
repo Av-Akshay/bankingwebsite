@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+html {
+  font-size: 62.5%;
+}
+/*============================== header css==================== */
+.menu {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  background-color: rgb(144, 218, 228);
+  overflow-y: hidden;
+}
+.logo {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 2rem;
+  border-radius: 50%;
+}
+.bank-name {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 900;
+}
+.menu-bar {
+  position: absolute;
+  top: 2rem;
+  right: 5rem;
+  overflow: hidden;
+}
+.menu-btn {
+  font-size: 2.5rem;
+  outline: none;
+  border: none;
+  background-color: rgb(144, 218, 228);
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 22rem;
+  list-style: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  right: -22rem;
+  transition: all 0.2s linear;
+  background-color: rgb(144, 218, 228);
+  animation: display 0.8s linear;
+  z-index: 99;
+}
+.menu-list ul {
+  list-style: none;
+}
+
+.active {
+  right: 0;
+}
+
+@keyframes display {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.active li {
+  margin: 2rem 0 0 2rem;
+}
+
+.menu-link {
+  color: white;
+  margin: 5rem 0 0 2rem;
+  text-decoration: none;
+}
+.close-btn-div {
+  margin: 2rem 0;
+}
+.close-btn {
+  font-size: 2rem;
+  border: none;
+  left: 3.2rem;
+  position: absolute;
+  background-color: rgb(144, 218, 228);
+}
+
+/* ======================home page css================================== */
+.center-div {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  justify-content: space-around;
+}
+.btn {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: 0.2rem solid rgb(7, 214, 242);
+  background-color: rgb(198, 238, 243);
+}
+.btn a {
+  text-decoration: none;
+  color: black;
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.customer {
+  max-width: 50rem;
+  max-height: 60vh;
+  animation: motion 4s infinite linear;
+}
+@keyframes motion {
+  0% {
+    translate: 0rem 0rem;
+  }
+  50% {
+    translate: 0rem 4rem;
+  }
+  100% {
+    translate: 0rem 0rem;
+  }
+}
+
+/*============================== customer page css============================================== */
+.section {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+}
+.table-div {
+  width: 90%;
+  margin: auto;
+}
+.pera {
+  font-size: 1.8rem;
+}
+.table-div table {
+  width: 100%;
+  font-size: 2rem;
+}
+.heading {
+  margin: 5rem 0;
+  text-align: center;
+  font-size: 2.8rem;
+}
+
+/*========================= money transfer page css======================= */
+
+form {
+  width: 60%;
+  margin: auto;
+}
+.input-filds {
+  width: 100%;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.forms-input {
+  padding: 0.5rem 1rem;
+}

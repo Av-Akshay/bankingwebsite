@@ -35,7 +35,6 @@ const Header = () => {
             className="menu-btn"
             onClick={() => {
               setToggle(!toggle);
-              console.log("clicked");
             }}
           >
             <HiMenu />

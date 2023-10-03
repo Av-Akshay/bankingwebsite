@@ -20,7 +20,6 @@ const Transfer = () => {
       tranferTo: "",
       transferCustomer: "",
     });
-    alert("Transection Is Completed");
   };
 
   const inputChange = (event) => {

@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
   transectionHistory: [],
-  transferMoney: [],
   clint: [
     {
       name: "Akshay",
@@ -74,35 +73,60 @@ const dumyData = (state = initialState, action) => {
         transferMoney: action.payload,
       };
     case "TRANSFER-THE-MONEY":
+      let arr1 = state?.clint?.filter((val) => {
+        return val.name === action.payload.transferCustomer;
+      });
+      let arr2 = state?.clint?.filter((val) => {
+        return val.name === action.payload.tranferTo;
+      });
+      let newArray = [...arr1, arr2];
       let newClints = state?.clint.map((items) => {
         if (items.name === action.payload.tranferTo) {
-          let newBalance =
-            items.current_balance + Number(action.payload.amount);
-          return {
-            ...items,
-            current_balance: newBalance,
-          };
+          if (action.payload.amount > newArray[0].current_balance) {
+            return {
+              ...items,
+            };
+          } else {
+            return {
+              ...items,
+              current_balance:
+                items.current_balance + Number(action.payload.amount),
+            };
+          }
         } else if (items.name === action.payload.transferCustomer) {
-          let newBalance = items.current_balance - action.payload.amount;
-          return {
-            ...items,
-            current_balance: newBalance,
-          };
+          if (action.payload.amount > newArray[0].current_balance) {
+            alert("balance is lower then amount");
+            return {
+              ...items,
+            };
+          } else {
+            return {
+              ...items,
+              current_balance: items.current_balance - action.payload.amount,
+            };
+          }
         } else {
           return items;
         }
       });
-      let date = new Date().toDateString();
-      let time = new Date().toLocaleTimeString();
-
-      return {
-        ...state,
-        clint: newClints,
-        transectionHistory: [
-          ...state.transectionHistory,
-          { ...action.payload, history: `${date}/${time}` },
-        ],
-      };
+      if (newArray[0].current_balance < action.payload.amount) {
+        return {
+          ...state,
+          clint: newClints,
+          transectionHistory: [...state.transectionHistory],
+        };
+      } else {
+        let date = new Date().toDateString();
+        let time = new Date().toLocaleTimeString();
+        return {
+          ...state,
+          clint: newClints,
+          transectionHistory: [
+            ...state.transectionHistory,
+            { ...action.payload, history: `${date}/${time}` },
+          ],
+        };
+      }
 
     default:
       return state;
